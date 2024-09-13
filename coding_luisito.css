@@ -1,0 +1,222 @@
+/* Centrar el contenido del body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('imagen2.jpg'); /* Coloca el nombre de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Estilo para el sobre y la tarjeta */
+.valentines {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: up 3s linear infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f08080;
+  margin: 0 auto;
+}
+
+.envelope:before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12px;
+}
+
+.text {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  color: #003049;
+  line-height: 1.2;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+}
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 17px;
+  left: 5%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Ajuste para centrar la sombra */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 170px;
+  left: 2%;
+  transform: translateX(-50%);
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+.valentines {
+  position: relative; /* Añadir esto para que los elementos hijos se posicionen correctamente */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: up 3s linear infinite;
+}
+
+/* Ajuste para el botón */
+.button-container {
+  position: absolute;
+  top: 320px; /* Ajusta esta medida para posicionar el botón debajo de la sombra */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.continue-btn {
+  background-color: #f4978e; /* Color rosado */
+  border: none;
+  border-radius: 20px; /* Botón con bordes más redondeados */
+  padding: 10px 20px; /* Tamaño reducido del botón */
+  font-size: 14px; /* Fuente más pequeña */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Sombra más ligera */
+}
+
+.continue-btn:hover {
+  background-color: #f08080; /* Cambio de color al hacer hover */
+  transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+.continue-btn:active {
+  transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+
+/* Animaciones */
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
+.small-image {
+  position: absolute;
+  top: 15px; /* Ajusta según sea necesario */
+  left: 79%;
+  transform: translateX(-50%);
+  width: 40px; /* Tamaño de la imagen */
+  height: auto;
+  z-index: 11; /* Para asegurar que la imagen esté sobre el corazón */
+}
+
